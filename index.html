@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Red Black Purple</title>
+        <style>
+            body {
+                background-color:#f0f0f0;
+            }
+            
+
+
+
+            #cardPanel {
+                padding: 12px;
+                text-align: center;
+                margin: -15px auto;
+                width: 360px;
+                background-color: #c0c0c0;
+                border-radius:      30px;
+            }
+            
+
+            #info {
+                position:   relative;
+                top:        20px;
+                width:  360px;
+                margin: 0 auto;
+                
+            }
+
+            #do-it {
+                visibility:     hidden;
+            
+            }
+            
+            
+            .red-back {
+                width:          180px;
+                color:          #fff;
+                background:     rgb(255,10,3);
+                background:     rgba(255,10,3,.69);
+                float:          left;
+                text-align:     center;
+            }
+
+            
+            .black-back {
+                width:          180px;
+                color:          #fff;
+                background:     rgb(3,1,2);
+                background:     rgba(1,2,3,.7);
+                float:          right;
+                text-align:     center;
+            }
+
+            
+            img {
+                padding: 0 10px 0 10px;
+                margin:  0 20px;
+            }
+
+
+
+            h1 {
+                font-family: "Georgia", Times, serif;
+                font-size: 40px;
+                text-align: center;
+                font-style: italic;
+                padding: 10px 0 0 0;
+            }
+
+
+
+            h2 {
+                position: relative;
+                bottom: 30px;
+                font-family: "Arial", sans-serif;
+                font-size: 10px;
+                text-align: center;
+                margin: auto auto 0 auto;
+            }
+        </style>
+        
+        <script src="jquery-1.6.min.js"></script>
+        <script>
+        
+            function getDemCardsNawMean() {
+            // function to replace those cards dahn nere, naw mean?
+                var img_loc = [];
+                for (var i=0; i<2; i++) {
+                    var rando = Math.floor(Math.random()*52)+1;
+                    img_loc[i] = "images//" + rando.toString() + '.png';
+                }
+                
+                $('#card-uno').attr('src', img_loc[0]);
+                $('#card-zwei').attr('src', img_loc[1]);
+            }
+            
+            
+            
+            // bind onClick and load up a fresh set
+            $(document).ready(function() {
+                $('#cardPanel, #cardPanel > *').click(function() {
+                    getDemCardsNawMean();
+                    });
+                //getDemCardsNawMean();
+            });
+            
+        </script>
+    </head>
+    
+    <body>
+        <h1>Red Black Purple</h1>
+        <h2>it'll get ya' drunk</h2>
+
+            <div id="cardPanel">
+            
+           <!--
+           
+                the cards are here
+                TODO:   new deck of cards, don't have the backs to these (sad face)
+                
+            -->
+            <img id="card-uno" src="images/b.png" />
+            <img id="card-zwei" src="images/b.png" />  
+        
+            </div>
+            
+            <div id="info">
+                <span class="red-back"><a href="javascript:$('do-it, do-it > *').show(); return false;">how do you play this?</a></span>
+                <span class="black-back">who made this?</span>
+                
+            </div>
+            
+            <div id="do-it">
+                <p>here are zee rules</p>
+            </div>
+    </body>
+</html>
+    
