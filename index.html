@@ -8,9 +8,17 @@
                 background-color:#f0f0f0;
             }
             
-
-
-
+            
+            a, a:link, a:visited {
+                color:      #000;
+                text-decoration:    none;
+            }
+            
+            a:active, a:hover, a:focus {
+                color:      #000;
+                text-decoration:    underline;
+            }
+            
             #cardPanel {
                 padding: 12px;
                 text-align: center;
@@ -29,17 +37,27 @@
                 
             }
 
-            #do-it {
-                visibility:     hidden;
+            #how-to-play {
+                display:        none;
+                margin:         0 auto;
+                width:          360px;
+                position:       relative;
+                top:            35px;
+            }
             
+            #who {
+            
+                display:        none;
+                margin:         0 auto;
+                width:          360px;
+                position:       relative;
+                top:            35px;
             }
             
             
             .red-back {
                 width:          180px;
                 color:          #fff;
-                background:     rgb(255,10,3);
-                background:     rgba(255,10,3,.69);
                 float:          left;
                 text-align:     center;
             }
@@ -48,8 +66,6 @@
             .black-back {
                 width:          180px;
                 color:          #fff;
-                background:     rgb(3,1,2);
-                background:     rgba(1,2,3,.7);
                 float:          right;
                 text-align:     center;
             }
@@ -104,7 +120,6 @@
                 $('#cardPanel, #cardPanel > *').click(function() {
                     getDemCardsNawMean();
                     });
-                //getDemCardsNawMean();
             });
             
         </script>
@@ -115,26 +130,33 @@
         <h2>it'll get ya' drunk</h2>
 
             <div id="cardPanel">
-            
-           <!--
-           
-                the cards are here
-                TODO:   new deck of cards, don't have the backs to these (sad face)
-                
-            -->
             <img id="card-uno" src="images/b.png" />
             <img id="card-zwei" src="images/b.png" />  
         
             </div>
             
             <div id="info">
-                <span class="red-back"><a href="javascript:$('do-it, do-it > *').show(); return false;">how do you play this?</a></span>
-                <span class="black-back">who made this?</span>
+                <span class="red-back"><a href="#" onClick="javascript:$('#who').hide('slow');  $('#how-to-play').toggle('fast'); return false;">how do you play this?</a></span>
+                <span class="black-back"><a href="#" onClick="javascript:$('#how-to-play').hide('slow'); $('#who').toggle('fast'); return false;">who made this?</a></span>
                 
             </div>
             
-            <div id="do-it">
-                <p>here are zee rules</p>
+            <div id="how-to-play">
+                <h3>Rules</h3>
+                <p>
+                    <strong>This game requires at least two players or you're just an alcoholic!</strong>
+                    <br />A player guesses the next set of cards.  "Black" represents two cards of black suits, 
+                    "red" two cards of red suits, and "purple" a combination of the two.  If you guess correctly, 
+                    you get to hand out two drinks (one for each card).  Both drinks can be given to one person, or
+                    you can split them up between players.  If you guess wrong, you take one drink.
+                </p>
+            </div>
+            
+            <div id="who">
+                <h3>Who Made This?</h3>
+                <p>
+                    <a href="mailto:lukeDELETETHISPARTkuzmish@gmail.com">Luke Kuzmish</a> &copy; 2011</a>
+                </p>
             </div>
     </body>
 </html>
